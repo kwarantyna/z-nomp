@@ -2,13 +2,13 @@
     "enabled": true,
     "coin": "vaiot.json",
 
-    "address": "b19n22JQfn7DPBvukLFCjeY1wP9bkorh8k1",
+    "address": "b1Put8FLtFK1VjVpSoaPECvhqRXuw8RgBCB",
     "_comment_address": "a transparent address to send coinbase rewards to and to transfer to zAddress.",
 
-    "zAddress": "zkSMceQKq7t9uuac461EfYxJLEPJyfR8J74QnS5Wv6KnLtkwBz46Jy17j6CTSUYN7JENg666y6ygAB1hLEhTqCdQDyttYmv",
+    "zAddress": "zkeTJhM8pjnRdYm2qNgg85AYpUa3yuz7JHLMvaSLKu3DYcpmGvWja6EivUzAyzYd3kEaGXVBbaZu7aAxFNRmZJmVRbuG5hp",
     "_comment_zAddress": "a private address used to send coins to tAddress.",
 
-    "tAddress": "b1Guko1sSBFBU8por5iHWMYryw7DGWTB3Qs",
+    "tAddress": "b16PYi3jixX5ip4w6dZme7B9zgj3j2G2xDB",
     "_comment_tAddress": "transparent address used to send payments, make this a different address, otherwise payments will not send",
 
     "walletInterval": 2.5,
@@ -42,7 +42,7 @@
     "ports": {
         "3032": {
             "tls":false,
-            "diff": 0.05,
+            "diff": 0.125,
             "varDiff": {
                 "minDiff": 0.04,
                 "maxDiff": 16,
