@@ -245,7 +245,7 @@ function SetupForPool(logger, poolOptions, setupFinished){
             logger.error(logSystem, logComponent, 'tBalance === NaN for sendTToZ');
             return;
         }
-        if ((tBalance - 10000) <= 0)
+        if ((tBalance - 1) <= 0)
             return;
 
         // do not allow more than a single z_sendmany operation at a time
@@ -254,8 +254,8 @@ function SetupForPool(logger, poolOptions, setupFinished){
             return;
         }
 
-        var amount = satoshisToCoins(tBalance - 10000);
-        var params = [poolOptions.address, [{'address': poolOptions.zAddress, 'amount': amount}]];
+        var amount = satoshisToCoins(tBalance - 1);
+        var params = [poolOptions.address, [{'address': poolOptions.zAddress, 'amount': amount}], 1, 0.000001];
         daemon.cmd('z_sendmany', params,
             function (result) {
                 //Check if payments failed because wallet doesn't have enough coins to pay for tx fees
@@ -284,7 +284,7 @@ function SetupForPool(logger, poolOptions, setupFinished){
             logger.error(logSystem, logComponent, 'zBalance === NaN for sendZToT');
             return;
         }
-        if ((zBalance - 10000) <= 0)
+        if ((zBalance - 1) <= 0)
             return;
 
         // do not allow more than a single z_sendmany operation at a time
@@ -293,12 +293,9 @@ function SetupForPool(logger, poolOptions, setupFinished){
             return;
         }
 
-        var amount = satoshisToCoins(zBalance - 10000);
-        // unshield no more than 100 ZEC at a time
-        if (amount > 100.0)
-            amount = 100.0;
+        var amount = satoshisToCoins(zBalance - 1);
 
-        var params = [poolOptions.zAddress, [{'address': poolOptions.tAddress, 'amount': amount}]];
+        var params = [poolOptions.zAddress, [{'address': poolOptions.tAddress, 'amount': amount}], 1, 0.000001];
         daemon.cmd('z_sendmany', params,
             function (result) {
                 //Check if payments failed because wallet doesn't have enough coins to pay for tx fees
@@ -417,10 +414,10 @@ function SetupForPool(logger, poolOptions, setupFinished){
             shieldIntervalState++;
             switch (shieldIntervalState) {
                 case 1:
-                    listUnspent(poolOptions.address, null, minConfShield, false, sendTToZ);
+                    listUnspent(poolOptions.address, null, minConfShield, true, sendTToZ);
                     break;
                 default:
-                    listUnspentZ(poolOptions.zAddress, minConfShield, false, sendZToT);
+                    listUnspentZ(poolOptions.zAddress, minConfShield, true, sendZToT);
                     shieldIntervalState = 0;
                     break;
             }
@@ -868,7 +865,7 @@ function SetupForPool(logger, poolOptions, setupFinished){
                             totalOwed = totalOwed + (worker.balance||0);
                         }
                         // check if we have enough tAddress funds to begin payment processing
-                        listUnspent(null, notAddr, minConfPayout, false, function (error, tBalance){
+                        listUnspent(null, notAddr, minConfPayout, true, function (error, tBalance){
                             if (error) {
                                 logger.error(logSystem, logComponent, 'Error checking pool balance before processing payments.');
                                 return callback(true);

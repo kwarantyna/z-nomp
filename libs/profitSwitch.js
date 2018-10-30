@@ -556,7 +556,7 @@ module.exports = function(logger){
             coinStatus.difficulty = parseFloat((diff1 / target.toNumber()).toFixed(9));
             logger.debug(logSystem, symbol, 'difficulty is ' + coinStatus.difficulty);
 
-            coinStatus.reward = response.coinbasevalue / 100000000;
+            coinStatus.reward = response.coinbasevalue / 1000000;
             callback(null);
         });
     };

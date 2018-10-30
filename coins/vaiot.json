@@ -4,5 +4,5 @@
     "algorithm": "equihash",
     "requireShielding": true,
     "peerMagic": "a8eaa2cd",
-    "txfee": 0.0004
+    "txfee": 0.000001
 }

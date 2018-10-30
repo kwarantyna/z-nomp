@@ -2,13 +2,13 @@
     "enabled": true,
     "coin": "vaiot.json",
 
-    "address": "b19n22JQfn7DPBvukLFCjeY1wP9bkorh8k1",
+    "address": "b1FVfcUu8mJN9T13cJ5c5ZGdfx8mqmpx234",
     "_comment_address": "a transparent address to send coinbase rewards to and to transfer to zAddress.",
 
-    "zAddress": "zkSMceQKq7t9uuac461EfYxJLEPJyfR8J74QnS5Wv6KnLtkwBz46Jy17j6CTSUYN7JENg666y6ygAB1hLEhTqCdQDyttYmv",
+    "zAddress": "zkHsoBMoiNoDqdNGa3qhQTqaXVRGexiN8G1jzMpnyAB7vd3o53b3LzWSvFButtuf66Msct2BtSYax93VaUvFWZBJVzpHG82",
     "_comment_zAddress": "a private address used to send coins to tAddress.",
 
-    "tAddress": "b1Guko1sSBFBU8por5iHWMYryw7DGWTB3Qs",
+    "tAddress": "b17NpsZdBSYxsF4XeZ9hdycjFswXZDXwT6V",
     "_comment_tAddress": "transparent address used to send payments, make this a different address, otherwise payments will not send",
 
     "walletInterval": 2.5,
@@ -30,7 +30,7 @@
         "_comment_paymentMode":"prop, pplnt",
         "paymentInterval": 20,
         "minimumPayment": 0.1,
-        "maxBlocksPerPayment": 3,
+        "maxBlocksPerPayment": 50,
         "daemon": {
             "host": "127.0.0.1",
             "port": 7932,
@@ -42,7 +42,7 @@
     "ports": {
         "3032": {
             "tls":false,
-            "diff": 0.05,
+            "diff": 1,
             "varDiff": {
                 "minDiff": 0.04,
                 "maxDiff": 16,
