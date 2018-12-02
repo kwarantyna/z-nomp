@@ -1,8 +1,8 @@
 {
     "name": "vaiot",
-    "symbol": "vat",
+    "symbol": "vAI",
     "algorithm": "equihash",
     "requireShielding": true,
-    "peerMagic": "a8eaa2cd",
+    "peerMagic": "b119d88d",
     "txfee": 0.000001
 }
