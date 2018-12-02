@@ -1,7 +1,7 @@
 {
-    "name": "z-nomp",
-    "version": "0.0.4",
-    "description": "ZenCash (Equihash) stratum mining pool based on NOMP",
+    "name": "vmp",
+    "version": "0.0.1",
+    "description": "Vaiot (Equihash) stratum mining pool based on NOMP",
     "keywords": [
         "stratum",
         "mining",

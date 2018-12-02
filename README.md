@@ -93,8 +93,8 @@ in case the master process crashes.
 * Use something like [redis-commander](https://github.com/joeferner/redis-commander) to have a nice GUI
 for exploring your redis database.
 * Use something like [logrotator](http://www.thegeekstuff.com/2010/07/logrotate-examples/) to rotate log 
-output from Z-NOMP.
-* Use [New Relic](http://newrelic.com/) to monitor your Z-NOMP instance and server performance.
+output from VMP.
+* Use [New Relic](http://newrelic.com/) to monitor your VMP instance and server performance.
 
 
 #### Upgrading VMP
