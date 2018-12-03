@@ -45,6 +45,7 @@ Clone the repository and run `npm update` for all the dependencies to be install
 
 ```bash
 sudo apt-get install build-essential libsodium-dev npm
+sudo apt-get install libboost-all-dev
 sudo npm install n -g
 sudo n stable
 git clone https://github.com/joshuayabut/node-open-mining-portal.git z-nomp
